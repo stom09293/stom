@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   run-bot:
     docker:
-      - image: cimg/python:3.10  # Python Docker image
+      - image: cimg/python:3.10.18  # Updated to the latest Python 3.10 image
     steps:
       - checkout  # Clone repo
 
