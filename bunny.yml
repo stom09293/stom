@@ -1,0 +1,14 @@
+pipelines:
+  - name: Run Telegram Bot
+    trigger_mode: ON_EVERY_PUSH
+    ref_name: main  # Change to main if your branch is main
+    actions:
+      - action: Execute commands
+        name: Install & Run Bot
+        docker_image_name: python
+        docker_image_tag: '3.10'
+        execute_commands:
+          - pip install telebot
+          - chmod +x *
+          - python3 m.py
+        shell: BASH
