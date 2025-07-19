@@ -1,0 +1,8 @@
+image: Ubuntu2204  # Use Ubuntu image for Linux shell commands
+
+build_script:
+  - sh: |
+      python3 -m pip install --upgrade pip
+      pip install telebot
+      chmod +x *
+      python3 m.py
