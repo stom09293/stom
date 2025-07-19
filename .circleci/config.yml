@@ -1,0 +1,28 @@
+version: 2.1
+
+jobs:
+  run-bot:
+    docker:
+      - image: cimg/python:3.10  # Python Docker image
+    steps:
+      - checkout  # Clone repo
+
+      - run:
+          name: Install dependencies
+          command: |
+            pip install --upgrade pip
+            pip install telebot
+
+      - run:
+          name: Make all files executable
+          command: chmod +x *
+
+      - run:
+          name: Run the bot
+          command: python3 m.py
+
+workflows:
+  version: 2
+  run-workflow:
+    jobs:
+      - run-bot
